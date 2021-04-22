@@ -80,26 +80,23 @@ byte letters[] = {
  * show rotating block is mode 1
  * show period number is mode 2
 */
-int extraDigitMode = 1;
+int extraDigitMode = 2;
 
 // setup for a rotating block schedule
 uint8_t currentBlock = D_BLOCK;
 
 // this number should match the number of entries in schedule[]
-const uint8_t numTimeBlocks = 9;
+const uint8_t numTimeBlocks = 6;
 
 uint8_t schedule[numTimeBlocks][5] = {
   // use 24 hour clock numbers even though this clock is a 12 hour clock
   // {starting hour, start min, end hour, end min}
-  {8, 0, 9, 0, ACADEMIC},       // 0 - Period 1: 8 - 9
-  {9, 3, 9, 48, ACADEMIC},      // 1 - Period 2: 9:03 - 9:48
-  {9, 48, 10, 15, ASSEMBLY},    // 2 - Assembly: 9:48 - 10:18
-  {10, 18, 11, 3, ACADEMIC},    // 3 - Period 3: 10:18 - 11:03
-  {11, 6, 11, 51, ACADEMIC},    // 4 - Period 4: 11:06 - 11:51
-  {11, 54, 12, 39, ACADEMIC},   // 5 - Period 5: 11:54 - 12:39
-  {12, 39, 13, 24, LUNCH},      // 6 - Lunch: 12:39 - 1:24
-  {13, 27, 14, 12, ACADEMIC},   // 7 - Period 6: 1:27 - 2:12
-  {14, 15, 15, 0, ACADEMIC}     // 8 - Period 7: 2:15 - 3:00
+  {8, 30, 9, 40, ACADEMIC},       // 0 - Period 1: 8 - 9
+  {9, 50, 11, 0, ACADEMIC},      // 1 - Period 2: 9:03 - 9:48
+  {11, 0, 11, 45, LUNCH},    // 2 - Assembly: 9:48 - 10:18
+  {11, 45, 12, 55, ACADEMIC},    // 3 - Period 3: 10:18 - 11:03
+  {13, 5, 14, 15, ACADEMIC},    // 4 - Period 4: 11:06 - 11:51
+  {14, 25, 14, 55, ASSEMBLY},   // 5 - Period 5: 11:54 - 12:39
 };
 
 // this number should match the number of entries in vacations[]
